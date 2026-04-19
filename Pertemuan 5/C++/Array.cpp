@@ -1,57 +1,50 @@
 #include <iostream>
 #include <string>
-#include <array>
 
 using namespace std;
-int main () {
+
+int main() {
     system("cls");
-    int menu;
-cout << "Pilih Menu:";
-cin >> menu;
-    // --- 2 cara membuat array ---
-    
-switch('menu') {
-    // 1. array kosong
-    case '1': // array declaration
-    string nama [5];    // dimulai dari 0 sampai 4, 5 tidak dihitungg karna indeks ke 5 karna dihitung dari 0
-    nama[0] = "Alya";   // 1
-    nama[1] = "Risky";  // 2
-    nama[2] = "Rifki";  // 3
-    nama[3] = "fatih";  // 4
-    nama[4] = "Dhafa";  // 5
-    nama[5] = "Udin";   // 6
-    
-    for (int i = 0; i <= 5; i++) {
-        cout << "Nama dari indeks ke-" << i << ": " << nama[i] << endl;
-    }
-    cout << "Masukkan 5 nama: " << endl;
-    for (int i = 0; i <= 4; i++) {
-        cout << "Nama ke-" << i + 1 << ": ";
-        cin >> nama[i];
-    }
-    for (int i = 0; i <= 4; i++) {
-         cout << "Nama dari indeks ke-" << i + 1 << ": " << nama[i] << endl;
+
+    cout << "=== MATERI ARRAY ===" << endl;
+
+    string nama[5] = {"Alya", "Risky", "Rifki", "Fatih", "Dhafa"};
+
+    cout << "\nContoh deklarasi array:" << endl;
+    cout << "string nama[5] = {\"Alya\", \"Risky\", \"Rifki\", \"Fatih\", \"Dhafa\"};" << endl;
+
+    cout << "\nIsi array:" << endl;
+    for (int i = 0; i < 5; i++) {
+        cout << "Nama indeks ke-" << i << ": " << nama[i] << endl;
     }
 
-    // array langsung isi
-    // string nama[5] = {"Alya", "Risky", "Rifki","Fatih", "Dhafa"};
-    string nama[] = {"Alya", "Risky", "Rifki","Fatih", "Dhafa", "frans", "Mayong"};
-
-    // asending element in array
-    cout << "Asending" << endl;
-    for (int i = 0 ; i < 7; i++) {
+    cout << "\nAscending (i++):" << endl;
+    for (int i = 0; i < 5; i++) {
         cout << "Nama ke-" << i + 1 << ": " << nama[i] << endl;
     }
 
-    // desending element in array
-    cout << "desending" << endl;
-    for (int i = 6; i >= 0; i--) {
+    cout << "\nDescending (i--):" << endl;
+    for (int i = 4; i >= 0; i--) {
         cout << "Nama ke-" << i + 1 << ": " << nama[i] << endl;
     }
 
-    // multidimensional array
-    int matrix[3][3] = {{1,2,3}, {4,5,6}};
-    cout << "Matrix 2x3:" << endl;
+    string inputNama[5];
+
+    cout << "\nInput array 5 nama:" << endl;
+    for (int i = 0; i < 5; i++) {
+        cout << "Masukkan nama ke-" << i + 1 << ": ";
+        cin >> inputNama[i];
+    }
+
+    cout << "\nHasil input array:" << endl;
+    for (int i = 0; i < 5; i++) {
+        cout << "Nama indeks ke-" << i << ": " << inputNama[i] << endl;
+    }
+
+    cout << "\nContoh array 2 dimensi:" << endl;
+    cout << "int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};" << endl;
+
+    int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 3; j++) {
             cout << matrix[i][j] << " ";
@@ -59,26 +52,28 @@ switch('menu') {
         cout << endl;
     }
 
-    // string (array of char)
+    cout << "\nContoh string sebagai array karakter:" << endl;
     string nama1 = "Azriel";
-    cout << nama1[0] << endl;
-    cout << nama1[2] << endl;
-    cout << nama1[5] << endl;
+    cout << "Karakter ke-0: " << nama1[0] << endl;
+    cout << "Karakter ke-2: " << nama1[2] << endl;
+    cout << "Karakter ke-5: " << nama1[5] << endl;
 
+    cout << "Semua karakter:" << endl;
     for (int i = 0; i < nama1.length(); i++) {
         cout << nama1[i] << endl;
     }
 
-    string s1 = "hello", s2 = "World";
+    cout << "\nOperasi string:" << endl;
+    string s1 = "hello";
+    string s2 = "World";
     s1 = s2;
-    cout << s1 << endl;
-    cout << s1 + s2 << endl;
-    cout << (s1+s2).length() << endl;
+    cout << "s1 = " << s1 << endl;
+    cout << "s1 + s2 = " << s1 + s2 << endl;
+    cout << "Panjang s1 + s2 = " << (s1 + s2).length() << endl;
+    cout << "Substring s1 = " << s1.substr(2, 3) << endl;
 
-    cout << s1.substr(2,4) << endl;
-
-    // operator sizeof()
     short angka = 90;
-    cout << "Ukuran integer: " << sizeof(angka) << " bytes" << endl;
-    }
+    cout << "\nUkuran short: " << sizeof(angka) << " bytes" << endl;
+
+    return 0;
 }
