@@ -5,32 +5,33 @@
 using namespace std;
 int main () {
     system("cls");
-
-    // array declaration
-    /* 2 cara membuat array
-    1. array kosong */
-
-    // string nama [5];    // dimulai dari 0 sampai 4, 5 tidak dihitungg karna indeks ke 5 karna dihitung dari 0
-    // nama[0] = "Alya";   // 1
-    // nama[1] = "Risky";  // 2
-    // nama[2] = "Rifki";  // 3
-    // nama[3] = "fatih";  // 4
-    // nama[4] = "Dhafa";  // 5
-    // nama[5] = "Udin";   // 6
-
-    // for (int i = 0; i <= 5; i++) {
-    //     cout << "Nama dari indeks ke-" << i << ": " << nama[i] << endl;
-    // }
-
-    // cout << "Masukkan 5 nama: " << endl;
-    // for (int i = 0; i <= 4; i++) {
-    //     cout << "Nama ke-" << i + 1 << ": ";
-    //     cin >> nama[i];
-    // }
-
-    // for (int i = 0; i <= 4; i++) {
-    //      cout << "Nama dari indeks ke-" << i + 1 << ": " << nama[i] << endl;
-    // }
+    int menu;
+cout << "Pilih Menu:";
+cin >> menu;
+    // --- 2 cara membuat array ---
+    
+switch('menu') {
+    // 1. array kosong
+    case '1': // array declaration
+    string nama [5];    // dimulai dari 0 sampai 4, 5 tidak dihitungg karna indeks ke 5 karna dihitung dari 0
+    nama[0] = "Alya";   // 1
+    nama[1] = "Risky";  // 2
+    nama[2] = "Rifki";  // 3
+    nama[3] = "fatih";  // 4
+    nama[4] = "Dhafa";  // 5
+    nama[5] = "Udin";   // 6
+    
+    for (int i = 0; i <= 5; i++) {
+        cout << "Nama dari indeks ke-" << i << ": " << nama[i] << endl;
+    }
+    cout << "Masukkan 5 nama: " << endl;
+    for (int i = 0; i <= 4; i++) {
+        cout << "Nama ke-" << i + 1 << ": ";
+        cin >> nama[i];
+    }
+    for (int i = 0; i <= 4; i++) {
+         cout << "Nama dari indeks ke-" << i + 1 << ": " << nama[i] << endl;
+    }
 
     // array langsung isi
     // string nama[5] = {"Alya", "Risky", "Rifki","Fatih", "Dhafa"};
@@ -79,6 +80,5 @@ int main () {
     // operator sizeof()
     short angka = 90;
     cout << "Ukuran integer: " << sizeof(angka) << " bytes" << endl;
-
-
+    }
 }
